@@ -4,16 +4,19 @@ $(document).ready(function () {
 
 	$('.js_tabs').tabsPlugin();
 
-	$('.panel-heading').click(function () {
-		$(this).toggleClass('in').next().slideToggle();
+	$('.js_icon_menu').click(function () {
+		$(this).next().slideToggle();
+		$(this).toggleClass('open');
 	});
 
-	//open menu
-
-	$('.js_icon_menu').on('click', function () {
-		$(this).toggleClass('open');
-		$('.js_menu').toggleClass('open');
-
-		$('body').toggleClass('no-scroll');
+	var swiper = new Swiper('.swiper-container', {
+		slidesPerView: 'auto',
+		//slidesPerView: 2,
+		spaceBetween: 20,
+		centeredSlides: true,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true
+		}
 	});
 });
